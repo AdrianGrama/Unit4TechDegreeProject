@@ -1,0 +1,113 @@
+/* ============================================= */
+/*              Grid System                      */
+/* ============================================= */
+
+* {
+    font-family: 'Lato', sans-serif;
+    color: #777;
+    box-sizing: border-box;
+}
+
+p {
+    line-height: 1.45em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding: 0 10px;
+    @include mq('md') {
+            max-width: 1400px;
+            @include center;
+        }
+}
+.centered{
+    @include mq('md') {
+            @include center;
+        }
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 10px;
+    @include mq('md') {
+            flex-direction: row;
+        }
+}
+
+[class^=col] {
+    margin-top: 10px;
+    flex-basis: 100%;
+    min-height: 25px;
+    padding: 10px;
+    border-radius: 5px;
+    @include mq('md') {
+            display: flex;
+            justify-content: center;
+            margin-top: 0;
+            align-items: center;
+    
+            &+[class^=col] {
+                margin-left: 10px;
+            }
+        }
+}
+
+.theme.col-1 {
+    background-color: $theme-purple-dark;
+}
+
+.theme.col-2 {
+    background-color:$theme-dark-orange;
+}
+
+.theme.col-3 {
+    background-color: $theme-pink;
+}
+
+.theme.col-4 {
+    background-color: $theme-light-blue;
+}
+
+.theme.col-5 {
+    background-color: $theme-green;
+}
+
+.theme.col-6 {
+    background-color:$theme-blue;
+}
+
+.theme.col-7 {
+    background-color:$theme-salmon;
+}
+
+.theme.col-8 {
+    background-color: $theme-light-orange;
+}
+
+.theme.col-9 {
+    background-color: $theme-light-red;
+}
+
+.theme.col-10 {
+    background-color: $theme-light-green;
+}
+
+.theme.col-11 {
+    background-color: $theme-babyblue;
+}
+
+.theme.col-12 {
+    background-color: $theme-grass;
+}
+
+@include mq ('md') {
+    @include set-flex-col(12);
+}
+
+.card {
+    flex-basis: 100%;
+}

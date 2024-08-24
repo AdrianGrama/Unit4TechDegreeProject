@@ -1,0 +1,72 @@
+// use when needing to center element horizontally
+@mixin center {
+    @content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// loops through theme list
+@mixin themes($list) {
+
+    // start at 1 and go to length of list that is passed
+    @for $i from 1 through length($list) {
+
+        // loop through each item and return .col-# class with bgcolor
+        &.col-#{$i} {
+            background-color: nth($list, $i);
+        }
+    }
+}
+
+// loops through button map 
+@mixin set-btns($map) {
+    @each $btn, $btn-color in $map {
+        .#{$btn} {
+            background-color: $btn-color;
+
+            &:hover {
+                background-color: lighten($btn-color, 15%);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// set flex-basis of .col-# class elements
+@mixin set-flex-col($cols) {
+
+    @if is-int($cols)==false {
+        @error '#{$cols} is not a valid number';
+    }
+
+    @for $i from 1 through $cols {
+        $percentage: round(((100% / $cols) * $i) * 100%) / 100%;
+
+        .col-#{$i} {
+            flex-basis: $percentage;
+        }
+    }
+}
+
+// return media query
+@mixin mq($bk-pt) {
+    $val: map-get($breakpoints, $bk-pt);
+    $md: map-get($breakpoints, 'md');
+
+    @if $val ==null {
+        @error "#{$bk-pt} is not a valid breakpoint";
+    }
+
+    @else if $val < $md {
+        @media only screen and (max-width : $val) {
+            @content;
+        }
+    }
+
+    @else {
+        @media only screen and (min-width : $val) {
+            @content;
+        }
+    }
+}

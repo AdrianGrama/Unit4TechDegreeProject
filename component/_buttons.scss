@@ -1,0 +1,55 @@
+/* ============================================= */
+/*              Buttons                          */
+/* ============================================= */
+* {
+    font-family: 'Lato', sans-serif;
+    color: #777;
+    box-sizing: border-box;
+}
+
+p {
+    line-height: 1.45em;
+}
+
+a {
+    text-decoration: none;
+}
+.btn {
+    margin-top: 15px;
+    width: 100%;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    text-transform: uppercase;
+    border-radius: 5px;
+
+    @include mq ('md') {
+            padding: 10px 30px;
+    
+            &+.btn {
+                margin-left: 10px;
+            }
+        }
+}
+
+.default {
+    background-color: $theme-babyblue;
+}
+
+.error {
+    background-color: $theme-light-red;
+}
+
+.info {
+    background-color: $theme-purple-dark;
+}
+
+.success {
+    background-color: $theme-green;
+}
+
+.warning {
+    background-color: $theme-blue;
+}
+
+@include set-btns($buttons);
