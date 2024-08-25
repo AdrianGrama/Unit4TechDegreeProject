@@ -501,6 +501,46 @@ a {
   background-color: #4da2bb;
 }
 
+.default {
+  background-color: #51ddfc;
+}
+.default:hover {
+  background-color: #9cecfd;
+  cursor: pointer;
+}
+
+.error {
+  background-color: #e4757a;
+}
+.error:hover {
+  background-color: #f1b5b8;
+  cursor: pointer;
+}
+
+.info {
+  background-color: #927bc1;
+}
+.info:hover {
+  background-color: #bdafd9;
+  cursor: pointer;
+}
+
+.success {
+  background-color: #63cc82;
+}
+.success:hover {
+  background-color: #9ddfb0;
+  cursor: pointer;
+}
+
+.warning {
+  background-color: #fd7856;
+}
+.warning:hover {
+  background-color: #feb4a2;
+  cursor: pointer;
+}
+
 /* ============================================= */
 /*              Grid System                      */
 /* ============================================= */
@@ -618,40 +658,40 @@ a {
 
 @media only screen and (min-width: 768px) {
   .col-1 {
-    flex-basis: 8.33%;
+    flex-basis: 8.3333333333;
   }
   .col-2 {
-    flex-basis: 16.67%;
+    flex-basis: 16.6666666667;
   }
   .col-3 {
-    flex-basis: 25%;
+    flex-basis: 25;
   }
   .col-4 {
-    flex-basis: 33.33%;
+    flex-basis: 33.3333333333;
   }
   .col-5 {
-    flex-basis: 41.67%;
+    flex-basis: 41.6666666667;
   }
   .col-6 {
-    flex-basis: 50%;
+    flex-basis: 50;
   }
   .col-7 {
-    flex-basis: 58.33%;
+    flex-basis: 58.3333333333;
   }
   .col-8 {
-    flex-basis: 66.67%;
+    flex-basis: 66.6666666667;
   }
   .col-9 {
-    flex-basis: 75%;
+    flex-basis: 75;
   }
   .col-10 {
-    flex-basis: 83.33%;
+    flex-basis: 83.3333333333;
   }
   .col-11 {
-    flex-basis: 91.67%;
+    flex-basis: 91.6666666667;
   }
   .col-12 {
-    flex-basis: 100%;
+    flex-basis: 100;
   }
 }
 .card {

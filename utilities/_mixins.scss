@@ -20,31 +20,66 @@
 }
 
 // loops through button map 
-@mixin set-btns($map) {
-    @each $btn, $btn-color in $map {
-        .#{$btn} {
-            background-color: $btn-color;
+@mixin set-btns($default-color, $error-color, $info-color, $success-color, $warning-color) {
+    .default {
+        background-color: $default-color;
 
-            &:hover {
-                background-color: lighten($btn-color, 15%);
-                cursor: pointer;
-            }
+        &:hover {
+            background-color: lighten($default-color, 15%);
+            cursor: pointer;
+        }
+    }
+
+    .error {
+        background-color: $error-color;
+
+        &:hover {
+            background-color: lighten($error-color, 15%);
+            cursor: pointer;
+        }
+    }
+
+    .info {
+        background-color: $info-color;
+
+        &:hover {
+            background-color: lighten($info-color, 15%);
+            cursor: pointer;
+        }
+    }
+
+    .success {
+        background-color: $success-color;
+
+        &:hover {
+            background-color: lighten($success-color, 15%);
+            cursor: pointer;
+        }
+    }
+
+    .warning {
+        background-color: $warning-color;
+
+        &:hover {
+            background-color: lighten($warning-color, 15%);
+            cursor: pointer;
         }
     }
 }
 
 // set flex-basis of .col-# class elements
 @mixin set-flex-col($cols) {
-
-    @if is-int($cols)==false {
+    @if not is-number($cols) or $cols <=0 {
         @error '#{$cols} is not a valid number';
     }
 
     @for $i from 1 through $cols {
-        $percentage: round(((100% / $cols) * $i) * 100%) / 100%;
+        // Calculul procentajului corect
+        $percentage: calc(
+            100 / $cols) * $i;
 
         .col-#{$i} {
-            flex-basis: $percentage;
+            flex-basis: #{$percentage};
         }
     }
 }

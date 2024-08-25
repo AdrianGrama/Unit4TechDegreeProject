@@ -102,7 +102,7 @@ a {
 
 .theme.col-12 {
     background-color: $theme-grass;
-}
+} 
 
 @include mq ('md') {
     @include set-flex-col(12);
