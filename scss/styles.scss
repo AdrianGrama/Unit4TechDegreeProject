@@ -1,9 +1,9 @@
-@import '../scss/utilities/variables',
-'../scss/utilities/mixins',
-'../scss/base/normalize',
-'../scss/base/typography',
-'../scss/component/navigation',
-'../scss/component/forms',
-'../scss/component/images',
-'../scss/component/buttons',
-'../scss/component/grid';
+@import 'utilities/variables';
+@import 'utilities/mixins';
+@import 'base/normalize';
+@import 'base/typography';
+@import 'component/navigation';
+@import 'component/forms';
+@import 'component/images';
+@import 'component/buttons';
+@import 'component/grid';
